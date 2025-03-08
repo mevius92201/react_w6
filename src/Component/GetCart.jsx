@@ -237,7 +237,7 @@ function GetCart({
                     <span
                       style={{ display: "inline-flex", alignItems: "center" }}
                     >
-                      <Icon type="icon-CP" style={{ marginRight: "8px" }} />
+                      <Icon type="CP" style={{ marginRight: "8px" }} />
                       <div>{cartProduct.product.price}</div>
                     </span>
                   </td>
@@ -267,7 +267,7 @@ function GetCart({
                       <span
                         style={{ display: "inline-flex", alignItems: "center" }}
                       >
-                        <Icon type="icon-CP" style={{ marginRight: "8px" }} />
+                        <Icon type="CP" style={{ marginRight: "8px" }} />
                         {cartProduct.final_total}
                       </span>
                       <div className="remove">
@@ -277,10 +277,7 @@ function GetCart({
                             alignItems: "center",
                           }}
                         >
-                          <Icon
-                            type="icon-remove"
-                            style={{ marginRight: "8px" }}
-                          />
+                          <Icon type="remove" style={{ marginRight: "8px" }} />
                         </span>
                         <button
                           className="remove-btn"

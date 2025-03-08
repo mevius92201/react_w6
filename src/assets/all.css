@@ -48,6 +48,12 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+.icon-btn_appStore {
+  background-image: url("./icons/btn_appStore.png");
+}
+.icon-btn_googlePlay {
+  background-image: url("./icons/btn_googlePlay.png");
+}
 .icon-btn_appStore,
 .icon-btn_googlePlay {
   width: 233px;
@@ -68,6 +74,21 @@ a:hover {
   height: 32px;
   margin-right: 10px;
 }
+.icon-social_media_fb {
+  background-image: url("./icons/social_media_fb.png");
+}
+.icon-social_media_ig {
+  background-image: url("./icons/social_media_ig.png");
+}
+.icon-social_media_x {
+  background-image: url("./icons/social_media_x.png");
+}
+.icon-social_media_yt {
+  background-image: url("./icons/social_media_yt.png");
+}
+.icon-social_media_dc {
+  background-image: url("./icons/social_media_dc.png");
+}
 .footer-link_01,
 .footer-link_02,
 .footer-link_03 {
@@ -87,6 +108,15 @@ a:hover {
   width: 1rem;
   height: 1rem;
   scale: 1.1;
+}
+.icon-info_symbols_01 {
+  background-image: url("./icons/info_symbols_01.png");
+}
+.icon-info_symbols_03 {
+  background-image: url("./icons/info_symbols_03.png");
+}
+.icon-knife_symbols_01 {
+  background-image: url("./icons/knife_symbols_01.png");
 }
 .footer-link_01,
 .footer-link-02,
@@ -136,6 +166,9 @@ navbar-menu > a {
   width: 24px;
   height: 24px;
 }
+.icon-shopping_cart {
+  background-image: url("./icons/shopping_cart.png");
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -159,6 +192,9 @@ navbar-menu > a {
   height: 2rem;
   margin-right: 1rem;
   background-size: 100%;
+}
+.icon-logo {
+  background-image: url("./icons/logo.png");
 }
 .navbar-menu {
   display: flex;
@@ -346,7 +382,7 @@ input:not(:placeholder-shown) + .passWord {
 .icon-CP {
   width: 16px;
   height: 16px;
-  /* background-image: url("./icons/CP.png"); */
+  background-image: url("./icons/CP.png");
   background-repeat: no-repeat;
   animation: animateCpIcon 1.5s steps(5) infinite;
 }
@@ -371,7 +407,7 @@ input:not(:placeholder-shown) + .passWord {
   width: 16px;
   height: 16px;
   transform: scale(0.8);
-  background-image: url(./icons/remove.png);
+  background-image: url("./icons/remove.png");
   background-repeat: no-repeat;
 }
 .remove-btn {
@@ -427,7 +463,7 @@ input:not(:placeholder-shown) + .passWord {
   width: 59rem;
   height: 59rem;
   transform: scale(0.14);
-  background-image: url(./icons/frame.png);
+  background-image: url("./icons/frame.png");
   background-repeat: no-repeat;
   position: absolute;
   top: -22.3rem;
@@ -517,7 +553,7 @@ html {
   backdrop-filter: blur(2px);
 }
 .generate-info-icon {
-  background-image: url(./icons/eye01.png);
+  background-image: url("./icons/eye01.png");
   object-fit: contain;
   width: 1rem;
   height: 1rem;
@@ -595,9 +631,6 @@ html {
   font-weight: 500;
 }
 .product-add-cart-btn {
-  /* background-image: url('../assets/icons/purple_btn_01.png');
-    background-repeat: no-repeat;
-    background-size: contain; */
   border: none;
   border-radius: 5px;
   width: 100%;
@@ -665,7 +698,7 @@ product-add-cart-btn .btn-disabled {
 .icon-down_arrow {
   width: 16px;
   height: 16px;
-  background-image: url(./icons/down_arrow.png);
+  background-image: url("./icons/down_arrow.png");
   background-repeat: no-repeat;
   transition: 0.2s all ease;
 }
@@ -837,6 +870,7 @@ news-article-link:hover {
   font-size: 0.9rem;
 }
 .icon-age_limit {
+  background-image: url("./icons/age_limit.png");
   width: 200px;
   height: 200px;
   zoom: 0.2;
