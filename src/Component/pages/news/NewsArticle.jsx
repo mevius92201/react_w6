@@ -5,8 +5,8 @@ const { VITE_APP_API_BASE, VITE_APP_API_PATH } = import.meta.env;
 function NewsArticle() {
   const params = useParams();
   const { id } = params;
-
-  const [article, setArticle] = useState({});
+  console.log(id);
+  const [article, setArticle] = useState([]);
   const getArticle = async () => {
     try {
       const res = await axios.get(

@@ -31,7 +31,7 @@ const routes = [
         element: <News />,
       },
       {
-        path: "/:id",
+        path: "news/:id",
         element: <NewsArticle />,
       },
       {

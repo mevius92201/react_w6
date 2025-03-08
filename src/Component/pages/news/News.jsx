@@ -1,7 +1,4 @@
 import { Outlet, Link, useNavigate } from "react-router";
-import { useParams } from "react-router";
-
-import NewsArticle from "./NewsArticle";
 import axios from "axios";
 import { useEffect, useState } from "react";
 const { VITE_APP_API_BASE, VITE_APP_API_PATH } = import.meta.env;
@@ -10,7 +7,7 @@ function News() {
   // const params = useParams();
   // console.log(params);
   // const { id } = params;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [newsList, setNewsList] = useState([]);
 
   const getNewsList = async () => {
@@ -29,10 +26,10 @@ function News() {
     getNewsList();
   }, []);
 
-  function handleNavigate(e, news) {
-    e.preventDefault();
-    navigate(news.id);
-  }
+  // function handleNavigate(e, news) {
+  //   e.preventDefault();
+  //   navigate(news.id);
+  // }
   return (
     <>
       {newsList.map((news) => (
@@ -42,9 +39,6 @@ function News() {
           <Link to={news.id} className="news-article-link">
             查看
           </Link>
-          <a href="#" onClick={(e) => handleNavigate(e, news)}>
-            111
-          </a>
         </div>
       ))}
 
