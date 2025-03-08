@@ -37,16 +37,10 @@ function SupportCenter() {
 
   return (
     <>
-      {/* <AuthPage getProducts={getProduct} setIsAuth={false} /> */}
-      <div id="app">
-        <div className="container">
-          <SupportForm
-            setLoading={setLoading}
-            cartChanged={cartChanged}
-            setCartChanged={setCartChanged}
-            cartProductData={cartProductData}
-          />
-        </div>
+      <div className="main-wrapper">
+        <section className="support-container">
+          <SupportForm setLoading={setLoading} />
+        </section>
       </div>
       <div>
         <ToastContainer />

@@ -30,6 +30,7 @@ a:visited {
   text-decoration: none;
   outline: none;
   color: whitesmoke;
+  white-space: nowrap;
 }
 .linkIsActive {
   color: rgb(153, 204, 194) !important;
@@ -53,7 +54,66 @@ a:hover {
   height: 69px;
   zoom: 0.6;
 }
-
+.footer-media-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.icon-social_media_fb,
+.icon-social_media_ig,
+.icon-social_media_x,
+.icon-social_media_yt,
+.icon-social_media_dc {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.footer-link_01,
+.footer-link_02,
+.footer-link_03 {
+  display: flex;
+  align-items: center;
+  padding: 0 11px 0 10px;
+  position: relative;
+  color: #000;
+}
+.footer-symbol {
+  font-weight: 400;
+  margin-right: 0.1rem;
+}
+.icon-info_symbols_01,
+.icon-info_symbols_03,
+.icon-knife_symbols_01 {
+  width: 1rem;
+  height: 1rem;
+  scale: 1.1;
+}
+.footer-link_01,
+.footer-link-02,
+.footer-link-03 {
+  color: #000;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: self-end;
+}
+.footer-link-txt_01,
+.footer-link-txt_02,
+.footer-link-txt_03 {
+  color: #000;
+  font-size: 0.75rem;
+}
+.footer-link-txt_01::after,
+.footer-link-txt_02::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+.footer-media-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
 .linkIsActive {
   color: rgb(127, 227, 255);
 }
@@ -72,9 +132,9 @@ navbar-menu > a {
   margin-right: 1rem;
   transition: color 0.3s ease;
 }
-.icon-basket_yellow {
-  width: 32px;
-  height: 32px;
+.icon-shopping_cart {
+  width: 24px;
+  height: 24px;
 }
 .nav-container {
   display: flex;
@@ -97,7 +157,7 @@ navbar-menu > a {
   background-repeat: no-repeat;
   width: 10.5rem;
   height: 2rem;
-  margin: 0 1rem 0 1rem;
+  margin-right: 1rem;
   background-size: 100%;
 }
 .navbar-menu {
@@ -106,8 +166,13 @@ navbar-menu > a {
 }
 .navbar-menu-items {
   margin-right: 3rem;
-
   color: azure;
+}
+.support-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .auth-container {
   display: flex;
@@ -700,7 +765,6 @@ product-add-cart-btn .btn-disabled {
   color: white;
   padding: 0.8rem;
   width: 100%;
-  display: flex;
   z-index: 104;
 }
 .home-main-wrapper {
@@ -710,26 +774,88 @@ product-add-cart-btn .btn-disabled {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.footer_bottom {
-  z-index: 4;
+.news-article-link {
+  color: #000 !important;
+}
+news-article-link:hover {
+  color: #000 !important;
+}
+.footer-container {
   display: flex;
   justify-content: center;
+  margin: 0 5rem;
 }
-.footer_left {
-  background-image: url(../images/footer_logo_b.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  flex-grow: 0.5;
-  margin: 0 40px 0 0;
+
+.footer-left-group {
+  display: flex;
+  flex-direction: column;
 }
-.footer_middle {
+.footer-cnt {
+  margin-right: 1rem;
+}
+.footer-copyright {
+  margin-bottom: 0.6rem;
+}
+.footer-copyright-content {
+  white-space: nowrap;
+}
+.footer-links-group {
+  background: #dcdcdc;
+  display: flex;
+  padding: 3px 0;
+  white-space: nowrap;
+  width: fit-content;
+}
+.footer-middle-group {
   color: #fff;
   font-size: 0.8rem;
   flex-shrink: 1;
+  padding: 0 1rem;
+  flex-grow: 2;
+  justify-content: center;
+  flex-grow: 1;
+  display: flex;
 }
-.footer_right {
+.footer-mid-txt_01,
+.footer-mid-txt_02,
+.footer-mid-txt_03 {
+  margin-bottom: 0.5rem;
+}
+.footer-mid-txt_01::after {
+  content: "幫助";
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+.footer-mid-txt_02::after {
+  content: "F&Q";
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
+.footer-mid-txt_03::after {
+  content: "聯絡我們";
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+.icon-age_limit {
+  width: 200px;
+  height: 200px;
+  zoom: 0.2;
+}
+
+.footer-right-content {
   color: #fff;
   font-size: 0.7rem;
-  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.9rem;
+}
+.footer-right-content::before {
+  content: "本遊戲部分內容涉及性、暴力、棋奕、戀愛交友之情節,依遊戲軟體分級管理辦法分類為輔15級。本遊戲由Pixel Mart營運。請注意遊戲時間,避免沉迷於遊戲,可能影響身心健康。";
+  white-space: wrap;
+  width: 23rem;
+}
+.footer-right-content::after {
+  content: "本遊戲服務區域為台灣、香港、澳門。";
+  color: crimson;
+  margin-top: 0.3rem;
 }

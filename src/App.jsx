@@ -6,14 +6,14 @@ function App() {
   const activeClass = ({ isActive }) => {
     return isActive ? "linkIsActive" : "";
   };
-  const basket_yellow = <Icon type="basket_yellow" />;
+  const cartIcon = <Icon type="shopping_cart" />;
   const navbarMenuItems = [
     { to: "", menu: "首頁" },
     { to: "/news", menu: "最新消息" },
     { to: "/products", menu: "商品" },
     { to: "/support", menu: "幫助中心" },
     { to: "/admin_login", menu: "註冊/登入" },
-    { to: "/cart", menu: basket_yellow },
+    { to: "/cart", menu: cartIcon },
   ];
   return (
     <>
@@ -50,35 +50,73 @@ function App() {
             <Outlet />
           </main>
           <footer className="footer-wrapper">
-            <div className="footer_bottom">
-              <div className="footer_left"></div>
-              <div className="footer_middle">
-                Ⓒ 2021 Hiromu Arakawa/SQUARE ENIX CO., LTD. All
-                <br />
-                Rights Reserved.
-                <br />
-                Copyright © Garena Online.
-                <br />
-                Trademarks belong to their respective owners. All Rights
-                <br />
-                Reserved."
+            <div className="footer-container">
+              <div className="footer-left-group">
+                <div className="footer-game-logo">
+                  <Icon type="logo" />
+                </div>
+                <div className="footer-media-icons">
+                  <Icon type="social_media_fb" />
+                  <Icon type="social_media_ig" />
+                  <Icon type="social_media_x" />
+                  <Icon type="social_media_dc" />
+                </div>
               </div>
-              <img
-                src="images/15.jpg"
-                style={{
-                  height: "40px",
-                  width: "40px",
-                  margin: "0 20px 0 50px",
-                }}
-              />
-              <div className="footer_right">
-                本遊戲部分內容涉及性、暴力、棋奕、戀愛交友之情節,依遊戲軟體分級管理辦法分類為輔12級。
-                本遊戲由Pixel Mart營運。
-                請注意遊戲時間,避免沉迷於遊戲,可能影響身心健康。
-                <span style={{ color: "crimson" }}>
-                  本遊戲服務區域為台灣、香港、澳門。"
-                </span>
+              <div className="footer-cnt">
+                <div className="footer-copyright">
+                  <span className="footer-copyright-content">
+                    Copyright © Pixel Mart Online. <br />
+                    Trademarks belong to their respective owners. All Rights
+                    Reserved. <br />
+                    Copyright © Pixel Mart. All rights reserved.
+                  </span>
+                </div>
+
+                <div className="footer-links-group">
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    className="footer-link_01"
+                  >
+                    <div className="footer-symbol">
+                      <Icon type="info_symbols_01" />
+                    </div>
+                    <div className="footer-link-txt_01">授權資訊</div>
+                  </a>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    className="footer-link_02"
+                  >
+                    <div className="footer-symbol">
+                      <Icon type="info_symbols_03" />
+                    </div>
+                    <div className="footer-link-txt_02">服務條款</div>
+                  </a>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    className="footer-link_03"
+                  >
+                    <div className="footer-symbol">
+                      <Icon type="knife_symbols_01" />
+                    </div>
+                    <div className="footer-link-txt_03">授權資訊</div>
+                  </a>
+                </div>
               </div>
+              <div className="footer-middle-group">
+                <div className="footer-mid-content">
+                  <div className="footer-mid-txt_01"></div>
+                  <div className="footer-mid-txt_02"></div>
+                  <div className="footer-mid-txt_03"></div>
+                </div>
+              </div>
+              <div className="footer-age-symbol">
+                <Icon type="age_limit" />
+              </div>
+
+              <div className="footer-right-content"></div>
             </div>
 
             <div className="app_icon"></div>

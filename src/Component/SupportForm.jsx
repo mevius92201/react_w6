@@ -7,12 +7,7 @@ import PropTypes from "prop-types";
 
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
 const API_PATH = "mevius";
-function SupportForm({
-  setLoading,
-  cartChanged,
-  setCartChanged,
-  cartProductData,
-}) {
+function SupportForm({ setLoading }) {
   const {
     register,
     handleSubmit,
@@ -45,7 +40,6 @@ function SupportForm({
       });
       console.log(res.data.orderId);
       await orderPaid(res.data.orderId);
-      setCartChanged(!cartChanged);
     } catch (err) {
       toast.error(err.response.data.message, {
         position: "top-center",
@@ -92,7 +86,7 @@ function SupportForm({
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <div className="my-5 row justify-content-center">
+    <div className="form-container">
       <form className="col-md-6" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
@@ -122,7 +116,7 @@ function SupportForm({
 
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            收件人姓名
+            姓名
           </label>
           <input
             id="name"
@@ -152,7 +146,7 @@ function SupportForm({
 
         <div className="mb-3">
           <label htmlFor="tel" className="form-label">
-            收件人電話
+            電話
           </label>
           <input
             id="tel"
@@ -178,7 +172,7 @@ function SupportForm({
 
         <div className="mb-3">
           <label htmlFor="address" className="form-label">
-            收件人地址
+            地址
           </label>
           <input
             id="address"
