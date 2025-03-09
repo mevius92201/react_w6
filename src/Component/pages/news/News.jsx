@@ -1,4 +1,4 @@
-import { Outlet, Link, useNavigate } from "react-router";
+import { Outlet, Link } from "react-router";
 import axios from "axios";
 import { useEffect, useState } from "react";
 const { VITE_APP_API_BASE, VITE_APP_API_PATH } = import.meta.env;
@@ -10,21 +10,22 @@ function News() {
   // const navigate = useNavigate();
   const [newsList, setNewsList] = useState([]);
 
-  const getNewsList = async () => {
-    try {
-      const res = await axios.get(
-        `${VITE_APP_API_BASE}/api/${VITE_APP_API_PATH}/articles`
-      );
-      setNewsList(res.data.articles);
-
-      console.log(res);
-    } catch (err) {
-      console.error(err);
-    }
-  };
   useEffect(() => {
+    const getNewsList = async () => {
+      try {
+        const res = await axios.get(
+          `${VITE_APP_API_BASE}/api/${VITE_APP_API_PATH}/articles`
+        );
+        setNewsList(res.data.articles);
+
+        console.log(res);
+      } catch (err) {
+        console.error(err);
+      }
+    };
     getNewsList();
   }, []);
+
   // let timestamp;
   // const date = new Date(timestamp);
   // const formattedDate = date.toLocaleDateString({

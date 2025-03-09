@@ -1,11 +1,11 @@
 import { Outlet, NavLink } from "react-router";
 import "./assets/all.css";
 import Icon from "./Component/Icon";
+const activeClass = ({ isActive }) => {
+  return isActive ? "linkIsActive" : "";
+};
 
 function App() {
-  const activeClass = ({ isActive }) => {
-    return isActive ? "linkIsActive" : "";
-  };
   const cartIcon = <Icon type="shopping_cart" />;
   const navbarMenuItems = [
     { to: "", menu: "首頁" },
