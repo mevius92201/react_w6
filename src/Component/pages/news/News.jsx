@@ -25,13 +25,13 @@ function News() {
   useEffect(() => {
     getNewsList();
   }, []);
-  let timestamp;
-  const date = new Date(timestamp);
-  const formattedDate = date.toLocaleDateString({
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  // let timestamp;
+  // const date = new Date(timestamp);
+  // const formattedDate = date.toLocaleDateString({
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  // });
 
   // function handleNavigate(e, news) {
   //   e.preventDefault();

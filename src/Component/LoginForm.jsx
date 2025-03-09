@@ -1,28 +1,53 @@
 import axios from "axios";
+import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
-const LoginForm = ({ getProducts, setIsAuth }) => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [passwordType, setPasswordType] = useState("password");
 
+  const [passwordType, setPasswordType] = useState("password");
+  const [isAuth, setIsAuth] = useState(false);
+  const navigate = useNavigate();
   const hasPasswordShow = () => {
     setPasswordType((prev) => (prev === "password" ? "text" : "password"));
   };
 
+  useEffect(() => {
+    const token = document.cookie.replace(
+      /(?:(?:^|.*;\s*)access_token\s*=\s*([^;]*).*$)|^.*$/,
+      "$1"
+    );
+    axios.defaults.headers.common.Authorization = token;
+    if (!token) return;
+    checkAdmin();
+  }, []);
+
+  const checkAdmin = async () => {
+    try {
+      await axios.post(`${API_BASE}/api/user/check`);
+      setIsAuth(true);
+    } catch (err) {
+      console.log(err.response.data.message);
+    }
+  };
+
   const onSubmit = async (data) => {
     try {
+      console.log("送出的 data:", data);
       const res = await axios.post(`${API_BASE}/admin/signin`, data);
       const { token, expired } = res.data;
-      document.cookie = `access_token=${token};expires=${new Date(expired)};`;
+      document.cookie = `access_token=${token};expires=${new Date(
+        expired
+      )};path=/`;
       axios.defaults.headers.common.Authorization = token;
       setIsAuth(true);
-      getProducts();
+      navigate("/admin");
     } catch (error) {
       alert("登入失敗: " + error.response.data.message);
     }
@@ -91,7 +116,6 @@ const LoginForm = ({ getProducts, setIsAuth }) => {
   );
 };
 LoginForm.propTypes = {
-  setIsAuth: PropTypes.bool.isRequired,
-  getProducts: PropTypes.func.isRequired,
+  setIsAuth: PropTypes.func.isRequired,
 };
 export default LoginForm;
