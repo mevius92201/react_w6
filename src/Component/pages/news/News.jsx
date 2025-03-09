@@ -25,6 +25,13 @@ function News() {
   useEffect(() => {
     getNewsList();
   }, []);
+  let timestamp;
+  const date = new Date(timestamp);
+  const formattedDate = date.toLocaleDateString({
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   // function handleNavigate(e, news) {
   //   e.preventDefault();
@@ -32,17 +39,31 @@ function News() {
   // }
   return (
     <>
-      {newsList.map((news) => (
-        <div className="news-list" key={news.id}>
-          <h3 className="news-title">{news.title}</h3>
-          <p className="news-description">{news.description}</p>
-          <Link to={news.id} className="news-article-link">
-            查看
-          </Link>
+      <section className="news-list">
+        <div className="news-list-group">
+          {newsList.map((news) => (
+            <div className="news-block" key={news.id}>
+              <div className="news-article">
+                <div className="news-list-article-content">
+                  <div className="news-title">{news.title}</div>
+                  <p className="news-description">{news.description}</p>
+                  <Link to={news.id} className="news-article-link">
+                    查看
+                  </Link>
+                </div>
+              </div>
+              <div className="news-date">
+                {new Date(news.create_at).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </div>
+            </div>
+          ))}
+          <Outlet />
         </div>
-      ))}
-
-      <Outlet />
+      </section>
     </>
   );
 }

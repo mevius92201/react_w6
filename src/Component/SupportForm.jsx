@@ -86,145 +86,149 @@ function SupportForm({ setLoading }) {
   }, [isSubmitSuccessful, reset]);
 
   return (
-    <div className="form-container">
-      <form className="col-md-6" onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            {...register("email", {
-              required: {
-                value: true,
-                message: "此欄位必填",
-              },
-              pattern: {
-                value: /^\S+@\S+\.\S+$/i,
-                message: "請輸入正確的 Email 格式",
-              },
-            })}
-            className={`form-control ${errors.email ? "is-invalid" : ""}`}
-            placeholder="請輸入 Email"
-          />
-          {errors.email && (
-            <div className="invalid-hint">{errors?.email?.message}</div>
-          )}
-        </div>
+    <div className="form-wrapper">
+      <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-fields">
+          <div className="floating">
+            <div className="floating__inner">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "此欄位必填",
+                  },
+                  pattern: {
+                    value: /^\S+@\S+\.\S+$/i,
+                    message: "請輸入正確的 Email 格式",
+                  },
+                })}
+                className={errors.email ? "error_auth-input" : "auth-input"}
+                placeholder="請輸入 Email"
+              />
+              {errors.email && (
+                <div className="invalid-hint">{errors?.email?.message}</div>
+              )}
+            </div>
 
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            姓名
-          </label>
-          <input
-            id="name"
-            name="姓名"
-            type="text"
-            {...register("name", {
-              required: {
-                value: true,
-                message: "此欄位位必填",
-              },
-              minLength: {
-                value: 2,
-                message: "請輸入至少2個字",
-              },
-              maxLength: {
-                value: 20,
-                message: "請勿超過20個字",
-              },
-            })}
-            className="form-control"
-            placeholder="請輸入姓名"
-          />
-          {errors.name && (
-            <div className="invalid-hint">{errors?.name?.message}</div>
-          )}
-        </div>
+            <div className="floating__inner">
+              <label htmlFor="name" className="form-label">
+                姓名
+              </label>
+              <input
+                id="name"
+                name="姓名"
+                type="text"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "此欄位位必填",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "請輸入至少2個字",
+                  },
+                  maxLength: {
+                    value: 20,
+                    message: "請勿超過20個字",
+                  },
+                })}
+                className={errors.name ? "error_auth-input" : "auth-input"}
+                placeholder="請輸入姓名"
+              />
+              {errors.name && (
+                <div className="invalid-hint">{errors?.name?.message}</div>
+              )}
+            </div>
 
-        <div className="mb-3">
-          <label htmlFor="tel" className="form-label">
-            電話
-          </label>
-          <input
-            id="tel"
-            name="電話"
-            type="text"
-            {...register("tel", {
-              required: {
-                value: true,
-                message: "此欄位必填",
-              },
-              pattern: {
-                value: /^09\d{8}$|^09\d{2}-\d{3}-\d{3}$/,
-                message: "請輸入正確的手機格式",
-              },
-            })}
-            className="form-control"
-            placeholder="請輸入電話"
-          />
-          {errors.tel && (
-            <div className="invalid-hint">{errors?.tel?.message}</div>
-          )}
-        </div>
+            <div className="floating__inner">
+              <label htmlFor="tel" className="form-label">
+                電話
+              </label>
+              <input
+                id="tel"
+                name="電話"
+                type="text"
+                {...register("tel", {
+                  required: {
+                    value: true,
+                    message: "此欄位必填",
+                  },
+                  pattern: {
+                    value: /^09\d{8}$|^09\d{2}-\d{3}-\d{3}$/,
+                    message: "請輸入正確的手機格式",
+                  },
+                })}
+                className={errors.tel ? "error_auth-input" : "auth-input"}
+                placeholder="請輸入電話"
+              />
+              {errors.tel && (
+                <div className="invalid-hint">{errors?.tel?.message}</div>
+              )}
+            </div>
 
-        <div className="mb-3">
-          <label htmlFor="address" className="form-label">
-            地址
-          </label>
-          <input
-            id="address"
-            name="地址"
-            type="text"
-            {...register("address", {
-              required: {
-                value: true,
-                message: "此欄位位必填",
-              },
-              minLength: {
-                value: 5,
-                message: "請輸入至少5個字",
-              },
-              maxLength: {
-                value: 150,
-                message: "請勿超過150個字",
-              },
-            })}
-            className="form-control"
-            placeholder="請輸入地址"
-          />
-          {errors.address && (
-            <div className="invalid-hint">{errors?.address?.message}</div>
-          )}
-        </div>
+            <div className="floating__inner">
+              <label htmlFor="address" className="form-label">
+                地址
+              </label>
+              <input
+                id="address"
+                name="地址"
+                type="text"
+                {...register("address", {
+                  required: {
+                    value: true,
+                    message: "此欄位位必填",
+                  },
+                  minLength: {
+                    value: 5,
+                    message: "請輸入至少5個字",
+                  },
+                  maxLength: {
+                    value: 150,
+                    message: "請勿超過150個字",
+                  },
+                })}
+                className={errors.address ? "error_auth-input" : "auth-input"}
+                placeholder="請輸入地址"
+              />
+              {errors.address && (
+                <div className="invalid-hint">{errors?.address?.message}</div>
+              )}
+            </div>
 
-        <div className="mb-3">
-          <label htmlFor="message" className="form-label">
-            留言
-          </label>
-          <textarea
-            id="message"
-            className="form-control"
-            {...register("message", {
-              maxLength: {
-                value: 300,
-                message: "請勿超過300個字",
-              },
-            })}
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
-        <div className="text-end">
-          <button
-            type="submit"
-            className="btn btn-danger"
-            // disabled={cartProductData.length === 0}
-          >
-            送出訂單
-          </button>
+            <div className="floating__inner">
+              <label htmlFor="message" className="form-label">
+                留言
+              </label>
+              <textarea
+                id="message"
+                className="form-control"
+                {...register("message", {
+                  maxLength: {
+                    value: 300,
+                    message: "請勿超過300個字",
+                  },
+                })}
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+            <div className="form-submit-btn">
+              <button
+                type="submit"
+                className="btn form-btn-submit"
+                // disabled={cartProductData.length === 0}
+              >
+                送出訂單
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

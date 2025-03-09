@@ -101,15 +101,27 @@ function App() {
                     <div className="footer-symbol">
                       <Icon type="knife_symbols_01" />
                     </div>
-                    <div className="footer-link-txt_03">授權資訊</div>
+                    <div className="footer-link-txt_03">隱私條款</div>
                   </a>
                 </div>
               </div>
               <div className="footer-middle-group">
                 <div className="footer-mid-content">
                   <div className="footer-mid-txt_01"></div>
-                  <div className="footer-mid-txt_02"></div>
-                  <div className="footer-mid-txt_03"></div>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    className="footer-mid-link_01"
+                  >
+                    <div className="footer-mid-txt_02"></div>
+                  </a>
+                  <a
+                    href="https://google.com"
+                    target="_blank"
+                    className="footer-mid-link_01"
+                  >
+                    <div className="footer-mid-txt_03"></div>
+                  </a>
                 </div>
               </div>
               <div className="footer-age-symbol">
