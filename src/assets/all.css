@@ -826,7 +826,7 @@ product-add-cart-btn .btn-disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15rem;
+  padding: 15rem 0;
 }
 .news-block {
   margin-bottom: 3rem;
@@ -875,10 +875,13 @@ product-add-cart-btn .btn-disabled {
   background-size: cover;
 }
 .news-article-link {
-  color: #000 !important;
+  color: #611085 !important;
+  font-size: 2rem;
+  position: relative;
+  top: 1.5rem;
 }
 news-article-link:hover {
-  color: #000 !important;
+  color: #8959dd !important;
 }
 .footer-container {
   display: flex;

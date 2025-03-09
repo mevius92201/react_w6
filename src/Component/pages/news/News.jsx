@@ -48,7 +48,7 @@ function News() {
                   <div className="news-title">{news.title}</div>
                   <p className="news-description">{news.description}</p>
                   <Link to={news.id} className="news-article-link">
-                    查看
+                    READ MORE
                   </Link>
                 </div>
               </div>
