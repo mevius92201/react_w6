@@ -60,8 +60,8 @@ const LoginForm = () => {
           <div className="floating__inner">
             <input
               id="signInUsername"
-              className={errors.email ? "error_auth-input" : "auth-input"}
-              {...register("email", {
+              className={errors.username ? "error_auth-input" : "auth-input"}
+              {...register("username", {
                 required: {
                   value: true,
                   message: "此欄位必填",
@@ -78,7 +78,7 @@ const LoginForm = () => {
             </label>
           </div>
           {errors.email && (
-            <div className="error-hint">{errors?.email?.message}</div>
+            <div className="error-hint">{errors?.username?.message}</div>
           )}
         </div>
         <div className="floating">
